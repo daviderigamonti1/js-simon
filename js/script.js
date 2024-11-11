@@ -46,5 +46,12 @@ function randomNum() {
     return Array.from(numberListElement);
 }
 const randomNumbers = randomNum();
-//Visualizzo i numeri nell'ul con id "numbers-list"
-numbersList.innerHTML = randomNumbers.join(", ");
+
+let listItems = "";
+//Ciclo ogni elemento di randomNumbers per inserirli uno ad uno all'interno di un li
+for (let i = 0; i < randomNumbers.length; i++) {
+    listItems += `<li>${randomNumbers[i]}</li> `;
+}
+
+numbersList.innerHTML = listItems;
+console.log(listItems)
